@@ -9,7 +9,6 @@ As with the original "string".replace(find, replace), if find is an empty string
 */
 
 // my solution
-
 function replaceAll(input, find, replace) {
   if (find == "") {
     return input === ""

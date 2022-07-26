@@ -8,6 +8,7 @@ Considering these factors, write a function that tells you if it is possible to 
 Function should return true if it is possible and false if not.
 */
 
+// my solution
 const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
     if (distanceToPump <= mpg*fuelLeft){
         return true
