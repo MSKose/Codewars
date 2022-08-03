@@ -10,7 +10,7 @@ Example: The binary representation of 1234 is 10011010010, so the function shoul
 var countBits = function (n) {
   return n == 0 ? 0 : n.toString(2).match(/1/g).length;
 };
-// learnt to use toString(2) with this question. what toString(2) does is
+// learned to use toString(2) with this question. what toString(2) does is
 // it converts your number to specified base
 
 //! alternative-solution
