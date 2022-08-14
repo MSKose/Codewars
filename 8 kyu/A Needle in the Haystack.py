@@ -19,6 +19,8 @@ def find_needle(haystack):
     for idx, x in enumerate(haystack):
         if x == "needle":
             return f"found the needle at position {idx}"
+# had to look up enumerate on the internet. It's a shame python 
+# does to have the for loops the way js has it. 
 
 #! alternative-solution
 def find_needle(haystack):
