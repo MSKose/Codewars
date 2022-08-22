@@ -11,6 +11,7 @@ Examples
 {"C++": 50, "ASM": 10, "Haskell": 20}     -->  []
 */
 
+// my solution
 function myLanguages(results) {
   return Object.entries(results)
     .filter((x) => x[1] >= 60)
