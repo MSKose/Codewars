@@ -16,5 +16,5 @@ def divisors(integer):
 
 #! alternative-solution
 def divisors(n):
-    return [i for i in xrange(2, n) if not n % i] or '%d is prime' % n
+    return [i for i in range(2, n) if not n % i] or '%d is prime' % n
 # same as mine but love the or part
