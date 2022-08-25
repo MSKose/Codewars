@@ -46,4 +46,4 @@ def max_rot(n):
         arr.append(int(s))
     return max(arr)
 # looks like I could have just appended the int(val) and get rid of the
-# complication the max() problem
+# complication with the max() problem in the end
