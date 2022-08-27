@@ -9,6 +9,7 @@ Complete the method which accepts an array of integers, and returns one of the f
 You can assume the array will always be valid, and there will always be one correct answer.
 */
 
+// my solution
 function isSortedAndHow(array) {
   if ([...array].sort((a, b) => a - b).join("") === array.join("")) {
     return "yes, ascending";
@@ -20,7 +21,7 @@ function isSortedAndHow(array) {
 }
 // I made a copy of array with spread because sort changes the original array
 
-//! alternative-1
+//! alternative-solution
 
 function isSortedAndHow(arr) {
   return arr.every((x, i) => i == 0 || arr[i] >= arr[i - 1])
