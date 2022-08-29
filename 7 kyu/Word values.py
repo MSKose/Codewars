@@ -1,4 +1,4 @@
-/*
+'''
 https://www.codewars.com/kata/598d91785d4ce3ec4f000018/
 
 Given a string "abc" and assuming that each letter in the string has a value equal to its position in the alphabet, our string will have a value of 1 + 2 + 3 = 6. This means that: a = 1, b = 2, c = 3 ....z = 26.
@@ -10,21 +10,31 @@ nameValue ["abc","abc abc"] should return [6,24] because of [ 6 * 1, 12 * 2 ]. N
 "abc" has a value of 6, while "abc abc" has a value of 12. Now, the value at position 1 is multiplied by 1 while the value at position 2 is multiplied by 2.
 
 Input will only contain lowercase characters and spaces.
-*/
+'''
 
-// my solution
-function wordValue(a) {
-    return a.map((x, y) => [...x].reduce((a,b) => a + (b !== ' ' && (b.charCodeAt(0) - 96)), 0) * (y+1))
-}
-// this question is similar to 6 kyu, see my explanation there if need be
+# my solution
+def name_value(arr):
+    result =[]
+    count = 0
+    
+    for idx1, el1 in enumerate(arr):
+        for el2 in el1:
+            if el2 != ' ':
+                count += ord(el2) - 96
+            
+        result.append(count * (idx1 + 1))
+        count = 0
+        
+    return result
 
-//! alternative-solution
-function wordValue(a) {
-    return a.map((s,i) => (i+1)*[...s].reduce((a,c) => a + c.charCodeAt(0)%32, 0))
-}
-/*
-taking modulus 32, it's just brilliant. How does that work you might ask. Well
-since alphabet starts from 97, modulus 32 would give exactly what we want. But 
-wait, there's spaces to check too? Yeap, and since ' '.charCodeAt(0) is 32 you
-don't have to worry about that. Again, this is brilliant 
-*/
+#! alternative-solution-1
+def nameValue(myList):
+    return [sum(ord(c) - 96 for c in word.replace(" ", "")) * (i + 1) for i, word in enumerate(myList)]
+
+#! alternative-solution-2
+def name_value(my_list):
+    return [(i+1)*count(x) for i,x in enumerate(my_list)]    
+def count(string):
+    letters = " abcdefghijklmnopqrstuvwxyz"
+    return sum(letters.index(x) for x in string)
+# Nice touch with the letters string starting with an empty string
