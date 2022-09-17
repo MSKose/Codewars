@@ -17,7 +17,7 @@ function createPhoneNumber(numbers) {
   return numbers.join("");
 }
 
-//! alternative solution
+//! alternative-solution
 function createPhoneNumber(numbers) {
   var format = "(xxx) xxx-xxxx";
   for (var i = 0; i < numbers.length; i++) {
