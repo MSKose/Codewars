@@ -22,7 +22,7 @@ function deleteNth(arr, n) {
   return newArr;
 }
 
-//! alternative-solution -1
+//! alternative-solution-1
 function deleteNth(arr, x) {
   var cache = {};
   return arr.filter(function (n) {
