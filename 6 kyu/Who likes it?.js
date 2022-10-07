@@ -13,6 +13,7 @@ Implement the function which takes an array containing the names of people that 
 Note: For 4 or more names, the number in "and 2 others" simply increases.
 */
 
+// my solution
 function likes(names) {
   if (names.length == 0) {
     return `no one likes this`;
