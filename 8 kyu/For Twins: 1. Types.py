@@ -1,0 +1,17 @@
+'''
+https://www.codewars.com/kata/59c1302ecb7fb48757000013
+
+Prolog:
+This kata series was created for friends of mine who just started to learn programming. Wish you all the best and keep your mind open and sharp!
+
+Task:
+Write a function that will accept two parameters: variable and type and check if type of variable is matching type. Return true if types match or false if not.
+
+Examples:
+42, "number"   --> true
+"42", "number" --> false
+'''
+
+# my solution
+def type_validation(variable, _type): 
+    return type(variable).__name__ == _type
