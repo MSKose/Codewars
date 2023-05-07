@@ -17,3 +17,13 @@ public class Kata {
     return Arrays.stream(array).map(n -> -n).toArray();
   }
 }
+
+//! alternative-solution
+public class StringUtils {
+  public static String toAlternativeString(String string) {
+        return string.chars()
+                .map(c -> Character.isUpperCase(c) ? Character.toLowerCase(c) : Character.toUpperCase(c))
+                .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
+                .toString();
+  }
+}
