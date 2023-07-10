@@ -9,7 +9,7 @@ If input data is invalid you should return 0 (as in no breaks are needed if we d
 */
 
 // my solution
-public class Chocolate{
+public class Chocolate {
     public static long breakChocolate(long n, long m) {
       return (n == 0 || m == 0) 
                 ? 0
