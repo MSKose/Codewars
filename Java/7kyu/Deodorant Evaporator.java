@@ -15,7 +15,7 @@ Content is in fact not necessary in the body of the function "evaporator", you c
 
 // my solution
 public class Evaporator { 
-	public static int evaporator(double content, double evap_per_day, double threshold) {
+	public static int evaporator(double content, double evap_per_day, double threshold){
         double thr = (threshold / 100) * content;
         double percentage_decrease = (100 - evap_per_day) / 100;
         int times = 0;
