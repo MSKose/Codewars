@@ -7,9 +7,6 @@ You can assume all values in the array are numbers.
 */
 
 // my solution
-public class Kata {
-    public static boolean smallEnough(int[] a, int limit) { 
-        for (int i : a) if (i > limit) return false;
-        return true;
-    }
+function smallEnough(a, limit){
+    return a.every(x => x <= limit);
 }
