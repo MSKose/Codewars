@@ -17,20 +17,20 @@ More examples in test cases. Good luck!
 */
 
 // my solution
-import java.util.Arrays;
+const totalConsecutiveNumSum = (firstNum, lastNum) => 
+        (firstNum + lastNum) * (lastNum - firstNum + 1) / 2;
 
-class Solution{
-    public static boolean solve(String s){
-        char[] chars = s.toCharArray();
-        Arrays.sort(chars);
-        String sorted = new String(chars);
+function solve(s) {
+    let min = Infinity;
+    let max = -Infinity;
+    let sum = 0;
 
-        for (int i = 0; i < sorted.length() - 1; i++) {
-            if (sorted.charAt(i) == sorted.charAt(i + 1) || sorted.charAt(i) + 1 != sorted.charAt(i + 1)) {
-                return false;
-            }
-        }
-
-        return true;
+    for (let i = 0; i < s.length; i++) {
+        let point = s.codePointAt(i);
+        min = Math.min(min, point);
+        max = Math.max(max, point);
+        sum += point;
     }
+
+    return totalConsecutiveNumSum(min, max) === sum;
 }

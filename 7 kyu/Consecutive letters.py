@@ -1,4 +1,4 @@
-/*
+'''
 https://www.codewars.com/kata/5ce6728c939bf80029988b57
 
 In this Kata, we will check if a string contains consecutive letters as they appear in the English alphabet and if each letter occurs only once.
@@ -14,23 +14,21 @@ solve("v") = True
 All inputs will be lowercase letters.
 
 More examples in test cases. Good luck!
-*/
+'''
 
-// my solution
-import java.util.Arrays;
+# my solution
+def total_consecutive_num_sum(first_num, last_num):
+    return (first_num + last_num) * (last_num - first_num + 1) // 2
 
-class Solution{
-    public static boolean solve(String s){
-        char[] chars = s.toCharArray();
-        Arrays.sort(chars);
-        String sorted = new String(chars);
+def solve(st):
+    min_val = float('inf')
+    max_val = float('-inf')
+    total_sum = 0
 
-        for (int i = 0; i < sorted.length() - 1; i++) {
-            if (sorted.charAt(i) == sorted.charAt(i + 1) || sorted.charAt(i) + 1 != sorted.charAt(i + 1)) {
-                return false;
-            }
-        }
+    for char in st:
+        point = ord(char)
+        min_val = min(min_val, point)
+        max_val = max(max_val, point)
+        total_sum += point
 
-        return true;
-    }
-}
+    return total_consecutive_num_sum(min_val, max_val) == total_sum
