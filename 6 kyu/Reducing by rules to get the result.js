@@ -31,3 +31,13 @@ I have also created other katas. Take a look if you enjoyed this kata!
 */
 
 // my solution
+function reduceByRules(numbers, rules) {
+    const len = rules.length;
+    let sum = numbers[0];
+    
+    for (let i = 0; i < numbers.length - 1; i++) {
+        sum = rules[i % len](sum, numbers[i + 1]);
+    }
+        
+    return sum;
+}
